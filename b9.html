@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tính tuổi</title>
+<script>
+function welcome() {
+    alert("Welcome to JavaScript");
+}
+function tinhTuoi() {
+    var D = new Date();
+    var NamSinh, NamHienTai;
+    NamHienTai = D.getFullYear();
+    do {
+        NamSinh = parseInt(prompt("Bạn sinh năm bao nhiêu:", ""));
+    } while (NamSinh > NamHienTai);
+    alert("Tuổi của bạn bây giờ là: " + (NamHienTai - NamSinh));
+}
+</script>
+</head>
+<body>
+<h2>Ví dụ JavaScript</h2>
+<button onclick="welcome()">Welcome</button>
+<br><br>
+<button onclick="tinhTuoi()">Tính tuổi</button>
+</body>
+</html>
