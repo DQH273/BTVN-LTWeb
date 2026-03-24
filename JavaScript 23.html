@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tính thành tiền</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-color: white;
+}
+
+
+/* mỗi dòng */
+.row {
+    margin-bottom: 15px;
+}
+
+/* label */
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+/* input */
+input {
+    padding: 5px;
+    width: 180px;
+}
+</style>
+
+<script>
+function tinhTien() {
+    var soLuong = parseFloat(document.getElementById("SoLuong").value);
+    var donGia = parseFloat(document.getElementById("DonGia").value);
+
+    if (!isNaN(soLuong) && !isNaN(donGia)) {
+        document.getElementById("ThanhTien").value = (soLuong * donGia).toLocaleString();
+    } else {
+        document.getElementById("ThanhTien").value = "";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Nhập số lượng và giá</h2>
+
+    <div class="row">
+        <label>Số lượng:</label>
+        <input type="text" id="SoLuong" onkeyup="tinhTien()">
+    </div>
+
+    <div class="row">
+        <label>Đơn giá:</label>
+        <input type="text" id="DonGia" onkeyup="tinhTien()">
+    </div>
+
+    <div class="row">
+        <label>Thành tiền:</label>
+        <input type="text" id="ThanhTien" readonly> USD
+    </div>
+</div>
+
+</body>
+</html>
